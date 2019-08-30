@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+</head>
+<body>
+     <div id="app">
+         <h4>Todo list</h4>
+      <ol>
+          <li v-for = "todo in todos" >{{todo}}</li>
+      </ol>
+
+      <input type="text"   v-model = "todo" >
+      <button @click="todos.unshift(todo)" >Add Todo</button>
+      <br>
+      <span>{{todo}}</span>
+     </div> 
+
+    <!-- loads vue library -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+<script>
+   new Vue({
+       el:"#app" , //registered element with that id to vue, now vue knows about it
+       data:{
+           todo: "" ,
+           todos: [] ,
+
+       }
+     
+   });
+</script>
+
+</body>
+</html>
